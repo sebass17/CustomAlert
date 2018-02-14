@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  CustomAlert
+//  LoadingIndicator
 //
 //  Created by Sebastián Méndez on 2/13/18.
 //  Copyright © 2018 None. All rights reserved.
@@ -8,18 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+final class ViewController: UIViewController {
+    
+    @IBAction func displayAlert(_ sender: UIButton) {
+        let title = "Error"
+        let text = "An error has ocurred in the DB, what do you want to do? An error has ocurred in the DB, what do you want to do?"
+        let alert = AlertViewController.instance(title: title, text: text, image: #imageLiteral(resourceName: "error"))
+        present(alert, animated: true, completion: nil)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
-
